@@ -1,6 +1,6 @@
 # say_hello
 
-A web application
+A web application which says hello to visitors.
 
 ### Installation
 
@@ -21,7 +21,7 @@ on Windows
 set FLASK_APP=say_hello
 ```
 
-Run the application on http://localhost:5000. 
+Run the application on the default host/port (http://localhost:5000). 
 ```
 flask run
 ```
