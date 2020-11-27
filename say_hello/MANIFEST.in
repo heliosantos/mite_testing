@@ -1,0 +1,2 @@
+graft say_hello/templates
+global-exclude *.pyc
