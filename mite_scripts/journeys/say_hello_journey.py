@@ -43,3 +43,6 @@ async def say_hello_journey(ctx, name):
         check_status_code(resp, 200)
         check_text(resp, f'Hello {name}')
     await sleep(1)
+
+    # logs 
+    ctx.send('journey_successful', desc=f'{name} checked in successfully')
