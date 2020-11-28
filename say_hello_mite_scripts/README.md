@@ -1,7 +1,7 @@
 # mite scripts for say_hello web app
 
 ### Setup
-Install [mite](https://github.com/sky-uk/mite)  .
+Install [mite](https://github.com/sky-uk/mite).  
 Install the scripts module:
 ```
 pip install -e .
