@@ -5,7 +5,7 @@ from asyncio import sleep
 
 
 @browser_decorator()
-async def say_hello_journey(ctx):
+async def say_hello_journey(ctx, name):
 
     # prepare journey
     basePath = ctx.config.get('basePath')
@@ -39,6 +39,6 @@ async def say_hello_journey(ctx):
 
     # execute transaction
     async with ctx.transaction("Submit name"):
-        resp = await ctx.browser.post(f'{basePath}/', headers=headers, data='name=Alex')
+        resp = await ctx.browser.post(f'{basePath}/', headers=headers, data=f'name={name}')
         check_status_code(resp, 200)
     await sleep(1)
