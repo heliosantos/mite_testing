@@ -1,4 +1,4 @@
-from .utils import check_status_code
+from .utils import check_status_code, check_text
 from mite_browser import browser_decorator
 from mite.exceptions import MiteError
 from asyncio import sleep
@@ -41,4 +41,5 @@ async def say_hello_journey(ctx, name):
     async with ctx.transaction("Submit name"):
         resp = await ctx.browser.post(f'{basePath}/', headers=headers, data=f'name={name}')
         check_status_code(resp, 200)
+        check_text(resp, f'Hello {name}')
     await sleep(1)

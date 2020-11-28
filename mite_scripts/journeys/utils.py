@@ -2,7 +2,7 @@ from mite.exceptions import MiteError
 
 
 def check_status_code(resp, expectedStatusCode):
-    """Raise an error if the response has an unexpected status code.
+    """Raise an MiteError if the response has an unexpected status code.
 
     Args:
         resp: the response to falidate
@@ -15,3 +15,15 @@ def check_status_code(resp, expectedStatusCode):
     """
     if resp.status_code != expectedStatusCode:
         raise MiteError(f"Invalid status code. Expected: {expectedStatusCode}, Actual: {resp.status_code} ")
+
+
+def check_text(resp, needle):
+    """Raise an error if the response doesn't contain the given string.
+
+    Args:
+        needle: the text to find in the response
+
+    """
+
+    if needle not in resp.text:
+        raise MiteError(f"Couldn't find \"{needle}\" in the response.")
