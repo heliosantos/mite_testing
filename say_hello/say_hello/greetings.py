@@ -10,6 +10,7 @@ def checkin():
     # render the checkin form
     return render_template('greetings/checkin.html')
 
+
 @bp.route('/', methods=('POST', ))
 def say_hello():
 

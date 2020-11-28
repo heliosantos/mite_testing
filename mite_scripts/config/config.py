@@ -7,7 +7,6 @@ def config():
         'Host': host,
     }
 
-
     return {
         'basePath': basePath,
         'headers': headers,

@@ -9,7 +9,7 @@ def create_app():
 
     # loads the config file, required to replace SECRET_KEY in production deployments
     app.config.from_pyfile('config.py', silent=True)
-    
+
     # load the greetings blueprint
     from . import greetings
     app.register_blueprint(greetings.bp)
@@ -18,5 +18,5 @@ def create_app():
     @app.route('/test')
     def test_endpoint():
         return 'Okay'
-    
+
     return app
